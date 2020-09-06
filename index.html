@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+      crossorigin="anonymous"
+    />
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="src/styles.css" />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    <script
+      src="https://kit.fontawesome.com/a16e02059a.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="body-box pb-4 pt-4">
+        <form id="search-form" class="form-inline pb-4">
+          <input
+            class="form-control mr-2"
+            type="text"
+            placeholder="Enter city "
+            autocomplete="off"
+            autofocus="off"
+            id="search-text-input"
+          />
+          <button
+            type="submit"
+            style="color: #ffffe3 text-dark"
+            class="btn btn-outline-light"
+            id="search-button"
+          ><i class="fas fa-search" id="emoji"></i>
+          Search  
+          </button>
+          <button
+            type="submit"
+            style="color: #ffffe3 text-dark"
+            class="btn btn-outline-light ml-2"
+            id="current-location-button"
+          > <i class="fas fa-map-marker-alt" id="emoji"></i>
+            
+Current location
+          </button>
+        </form>
+
+        <div class="row shadow-lg p-3 rounded">
+          <div class="col-sm pl-0">
+            <h5 class="text-left " id="current-day"></h5>
+            <h5 class="text-left" id="current-month"></h5>
+            <p class="text-left pb-5" id="current-time"></p>
+            <br/>
+            <p class="text-left mb-0 pb-0 mt-5" id="temp">
+              <span style="color: #ffffe3">
+                <i class="fas fa-long-arrow-alt-up" id="max"></i>º
+                <i class="fas fa-long-arrow-alt-down" id="min"></i>º
+              </span>
+            </p>
+            <p class="text-left pb-0">
+              Feels like 
+              <span id="main"></span> ºC
+            </p>
+          </div>
+
+          
+          <div class="col-sm ">
+            
+            <h1 class="text-center" id="current-city"></h1>
+            
+            <h2 class="text-center" id="current-temperature"> </h2>
+         <span class="units">
+              <a href="#" style="color: #ffffe3"id="celsius-link">°C</a>
+              <a href="#" style="color: #ffffe3" id="fahrenheit-link">°F</a>
+         </span>
+           
+           <p class="text-center pl-5" id="description"></p>
+          </div>
+      
+        
+          <div class="col-sm mt-5 pt-5 pr-0">
+              </br>
+            <p class="text-right mt-5 pt-5 mb-0">
+              <i class="fas fa-tint" id="emoji"></i>
+              Humidity:
+              <span id="value"></span> %
+            </p>
+            <p class="text-right">
+              <i class="fas fa-wind" id="emoji"></i> Wind speed:
+              <span id="speed"> </span> km/h
+            </p>
+          </div>
+        </div>
+
+        <hr />
+
+        <div class="row pt-2">
+          <div class="col center-block text-center">
+            <h6 class="mb-3" id="day1">Day, 01</h6>
+
+            <p id="emoji">
+              <i class="fas fa-sun"></i>
+            </p>
+            <h4><span class="max">28º</span></h4>
+            <h4><span class="min">22º</span></h4>
+          </div>
+
+          <div class="col center-block text-center">
+            <h6 class="mb-3" id="day2">Day, 02</h6>
+
+            <p id="emoji">
+              <i class="fas fa-cloud-sun-rain"></i>
+            </p>
+            <h4><span class="max">28º</span></h4>
+            <h4><span class="min">22º</span></h4>
+          </div>
+
+          <div class="col center-block text-center">
+            <h6 class="mb-3" id="day3">Day, 03</h6>
+
+            <p id="emoji">
+              <i class="fas fa-cloud-sun"></i>
+            </p>
+            <h4><span class="max">28º</span></h4>
+            <h4><span class="min">22º</span></h4>
+          </div>
+
+          <div class="col center-block text-center">
+            <h6 class="mb-3" id="day4">Day, 04</h6>
+
+            <p id="emoji">
+              <i class="fas fa-cloud-rain"></i>
+            </p>
+            <h4><span class="max">28º</span></h4>
+            <h4><span class="min">22º</span></h4>
+          </div>
+
+          <div class="col center-block text-center">
+            <h6 class="mb-3" id="day5">Day, 05</h6>
+
+            <p id="emoji">
+              <i class="far fa-sun"></i>
+            </p>
+            <h4><span class="max">28º</span></h4>
+            <h4><span class="min">22º</span></h4>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+      integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+      crossorigin="anonymous"
+    ></script>
+    <script src="src/index.js"></script>
+  </body>
+</html>
