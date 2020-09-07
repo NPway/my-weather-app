@@ -32,12 +32,16 @@ p {
 small {
   text-align: center;
 }
+a {
+  color: #ffffe3;
+}
 
-.units{
-  position:relative;
- float:right;
- top:-5rem;
- left:-1rem;
+.units {
+  color: #ffffe3;
+  position: relative;
+  float: right;
+  top: -5rem;
+  left: -1rem;
 }
 
 .body-box {
@@ -71,4 +75,15 @@ small {
 #current-temperature {
   color: #ffffe3;
   font-size: 70px;
+}
+
+#fahrenheit-link.active {
+  color: #f0810f;
+  cursor: default;
+}
+#celsius-link.active {
+  color: #f0810f;
+}
+#celsius-link.active:hover {
+  text-decoration: none;
 }
