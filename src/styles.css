@@ -87,3 +87,6 @@ a {
 #celsius-link.active:hover {
   text-decoration: none;
 }
+a #open {
+  color: black;
+}
