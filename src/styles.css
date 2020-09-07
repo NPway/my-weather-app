@@ -29,6 +29,9 @@ p {
   color: #ffffe3;
   font-size: 13px;
 }
+small {
+  text-align: center;
+}
 
 .units{
   position:relative;
