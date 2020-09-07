@@ -49,6 +49,8 @@ setCurrentDate();
 
 function showCurrentWeather(response) {
 
+    celsiusTemperature = response.data.main.temp;
+
     document.querySelector("#current-city").innerHTML = response.data.name;
     document.querySelector("#current-temperature").innerHTML = Math.round(response.data.main.temp);
     document.querySelector("#speed").innerHTML = Math.round(response.data.wind.speed);
@@ -121,3 +123,4 @@ let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", displayCelsiusTemperature);
 
 searchCity("London");
+
