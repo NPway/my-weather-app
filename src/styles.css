@@ -36,12 +36,20 @@ a {
   color: #ffffe3;
 }
 
+img{
+ position:relative;
+ top:-1rem;
+ left:1rem;
+
+ 
+}
 .units {
   color: #ffffe3;
   position: relative;
   float: right;
   top: -5rem;
-  left: -1rem;
+ left:-2rem;
+  
 }
 
 .body-box {
