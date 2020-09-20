@@ -23,158 +23,89 @@
   </head>
   <body>
     <div class="container">
-      <div class="body-box pb-4 pt-4">
-        <form id="search-form" class="form-inline pb-4">
+      <div class="body-box pb-2 pt-4">
+        <form id="search-form">
           <input
-            class="form-control mr-2"
+            class="col-form-outline-primary mr-1"
             type="text"
-            placeholder="Enter city "
+            placeholder="Enter city"
             autocomplete="off"
-            autofocus="off"
+            autofocus="on"
             id="search-text-input"
           />
           <button
             type="submit"
-            style="color: #ffffe3 text-dark"
-            class="btn btn-outline-light"
+            style="color: #ffffff text-dark"
+            class="btn btn-outline-light btn-sm"
             id="search-button"
           ><i class="fas fa-search" id="emoji"></i>
-          Search  
+           Search
           </button>
           <button
             type="submit"
-            style="color: #ffffe3 text-dark"
-            class="btn btn-outline-light ml-2"
+            style="color: #ffffff text-dark"
+            class="btn btn-outline-light btn-sm ml-1"
             id="current-location-button"
           > <i class="fas fa-map-marker-alt" id="emoji"></i>
-            
-Current location
+            Current location
+
           </button>
         </form>
 
-        <div class="row shadow-lg p-3 rounded">
-          <div class="col-sm pl-0">
-            <h5 class="text-left " id="current-day"></h5>
-            <h5 class="text-left" id="current-month"></h5>
-            <p class="text-left pb-5" id="current-time"></p>
-            <br/>
-            <p class="text-left mb-0 pb-0 mt-5" id="temp">
-              <span style="color: #ffffe3">
-                <i class="fas fa-long-arrow-alt-up" id="max"></i>º
-                <i class="fas fa-long-arrow-alt-down" id="min"></i>º
-              </span>
-            </p>
-            <p class="text-left pb-0">
+        <header>
+        <div class="row shadow-lg rounded">
+          <div class="col-6 col-md-4">
+             <h6 class="text-left mt-2 pt-2 pl-2" id="current-day"></h6> 
+             <h6 class="text-left mt pl-2 pb-0" id="current-month"></h6> 
+            <p class="text-left pl-2" id="current-time"></p> 
+    
+             <img src="" class="align-left " alt="" id="icon"/>
+            <p class="text-left pb-0 pl-2 mb-0 text-capitalize" id="description"></p>
+             <p class="text-left pl-2">
               Feels like 
               <span id="main"></span> ºC
             </p>
           </div>
-
-          
-         <div class="col-sm position-relative">
-            
-            <h1 class="text-center" id="current-city"></h1>
-            
-            <h2 class="text-center" id="current-temperature"> </h2>
-         <span class="units align-middle">
-              <a href="#"id="celsius-link" class="active">°C </a> 
-               </br> <a href="#" id="fahrenheit-link">°F</a>
+<div class="col-md-8 pb-0 mb-0">
+<h1 class="text-center pt-4 pb-2 pl-3" id="current-city"></h1>
+ <p class="text-center" id="current-temperature"> </p>
+    <span class="units align-middle">
+      <a href=""id="celsius-link" class="">°C </a> 
+     <a href="#" id="fahrenheit-link" class="">°F</a>
          </span>
-          
-           <img src="#" class="rounded mx-auto d-block align-middle" alt="#" id="icon"/>
-           <p class="text-center" id="description"></p>
-          </div>
-      
-        
-          <div class="col-sm mt-5 pt-5 pr-0">
-              </br>
-            <p class="text-right mt-5 pt-5 mb-0">
-              <i class="fas fa-tint" id="emoji"></i>
+           </div>
+
+<div class="col-md-8">
+  <p class="text-right mr-5">
+    <i class="fas fa-tint" id="emoji"></i>
               Humidity:
               <span id="value"></span> %
             </p>
-            <p class="text-right">
-              <i class="fas fa-wind" id="emoji"></i> Wind speed:
-              <span id="speed"> </span> km/h
-            </p>
-          </div>
-        </div>
+       </div>
 
-        <hr />
-
-        <div class="row pt-2">
-          <div class="col center-block text-center">
-            <h6 class="mb-3" id="day1">Day, 01</h6>
-
-            <p id="emoji">
-              <i class="fas fa-sun"></i>
-            </p>
-            <h4><span class="max">28º</span></h4>
-            <h4><span class="min">22º</span></h4>
-          </div>
-
-          <div class="col center-block text-center">
-            <h6 class="mb-3" id="day2">Day, 02</h6>
-
-            <p id="emoji">
-              <i class="fas fa-cloud-sun-rain"></i>
-            </p>
-            <h4><span class="max">28º</span></h4>
-            <h4><span class="min">22º</span></h4>
-          </div>
-
-          <div class="col center-block text-center">
-            <h6 class="mb-3" id="day3">Day, 03</h6>
-
-            <p id="emoji">
-              <i class="fas fa-cloud-sun"></i>
-            </p>
-            <h4><span class="max">28º</span></h4>
-            <h4><span class="min">22º</span></h4>
-          </div>
-
-          <div class="col center-block text-center">
-            <h6 class="mb-3" id="day4">Day, 04</h6>
-
-            <p id="emoji">
-              <i class="fas fa-cloud-rain"></i>
-            </p>
-            <h4><span class="max">28º</span></h4>
-            <h4><span class="min">22º</span></h4>
-          </div>
-
-          <div class="col center-block text-center">
-            <h6 class="mb-3" id="day5">Day, 05</h6>
-
-            <p id="emoji">
-              <i class="far fa-sun"></i>
-            </p>
-            <h4><span class="max">28º</span></h4>
-            <h4><span class="min">22º</span></h4>
-          </div>
-        </div>
-      </div>
-     
+<div class="col-6 col-md-4">
+ <p class="text-center">
+<i class="fas fa-wind" id="emoji"></i> Wind speed:
+<span id="speed"></span> m/s </p>
+</div>
+</header>
+<hr/>
+<div class="row" id="forecast">
+         <div class="col center-block text-center">
+            <h6 class="time"></h6>
+<img src="" class="" id="forecast-icon"/>
+            <p class="max">22º</p>
+            <p><span class="text-capitalize"></span> </p>
+             </div>
     </div>
-      <small class="d-block">
+   </div>
+      </div>
+                 
+    <small class="d-block">
         <a href="https://github.com/NPway/my-weather-app" target="_blank"id="open">Open-source code</a> , by Nat
       </small>
       
-    <script
-      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
-      integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
-      crossorigin="anonymous"
-    ></script>
-    <script src="src/index.js"></script>
+   <script src="src/index.js"></script>
   </body>
 </html>
+
