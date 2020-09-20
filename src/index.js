@@ -1,73 +1,99 @@
-let days = [
-    "Sunday",
-    "Monday",
-    "Tuesday",
-    "Wednesday",
-    "Thursday",
-    "Friday",
-    "Saturday"
-];
-let months = [
+function formatHours(timestamp) {
+    let date = new Date(timestamp);
+    let hours = date.getHours();
+    if (hours < 10) {
+        hours = `0` + hours;
+    }
+    let minutes = date.getMinutes();
+    if (minutes < 10) {
+        minutes = `0` + minutes;
+    }
 
-    "January",
-    "February",
-    "March",
-    "April",
-    "May",
-    "June",
-    "July",
-    "August",
-    "September",
-    "October",
-    "November",
-    "December"
-];
-
-function setCurrentDate() {
-
+    return `${hours}:${minutes}`;
+}
+function displayCurrentDate() {
 
     let now = new Date();
+    let days = [
+        "Sunday",
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday"
+    ];
+    let months = [
+        "January",
+        "February",
+        "March",
+        "April",
+        "May",
+        "June",
+        "July",
+        "August",
+        "September",
+        "October",
+        "November",
+        "December"
+    ];
     let day = days[now.getDay()];
-
-    let date = now.getDate();
     let month = months[now.getMonth()];
-    let hours = now.getHours();
-    if (hours < 10) {
-        hours = `0${hours}`;
-    }
-    let minutes = now.getMinutes();
-    if (minutes < 10) {
-        minutes = `0${minutes}`;
-    }
-    document.querySelector("#current-day").innerHTML = `${day},`;
-    document.querySelector("#current-month").innerHTML = `${month} ${date}`;
-    document.querySelector("#current-time").innerHTML = `${hours}:${minutes}`;
+    let date = now.getDate();
+    let hour = ("0" + now.getHours()).substr(-2);
+    let minute = ("0" + now.getMinutes()).substr(-2);
+    document.getElementById("current-month").innerHTML = `${month}, ${date}`;
+    document.getElementById("current-day").innerHTML = `${day}`;
+    document.getElementById("current-time").innerHTML = `${hour}:${minute}`;
 
 }
-setCurrentDate();
-
 
 function showCurrentWeather(response) {
 
     celsiusTemperature = response.data.main.temp;
+    let iconElement = document.querySelector("#icon");
+    iconElement.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
+
 
     document.querySelector("#current-city").innerHTML = response.data.name;
     document.querySelector("#current-temperature").innerHTML = Math.round(response.data.main.temp);
     document.querySelector("#speed").innerHTML = Math.round(response.data.wind.speed);
     document.querySelector("#value").innerHTML = response.data.main.humidity;
     document.querySelector("#main").innerHTML = Math.round(response.data.main.feels_like);
-    document.querySelector("#max").innerHTML = Math.round(response.data.main.temp_max);
-    document.querySelector("#min").innerHTML = Math.round(response.data.main.temp_min);
-    document.querySelector("#description").innerHTML = response.data.weather[0].main;
-    let iconElement = document.querySelector("#icon");
-    iconElement.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
+    document.querySelector("#description").innerHTML = response.data.weather[0].description;
+
+}
+
+function displayForecast(response) {
+
+    let forecastElement = document.querySelector("#forecast");
+    forecastElement.innerHTML = null;
+    let forecast = null;
+    for (let index = 0; index < 5; index++) {
+        forecast = response.data.list[index];
+        forecastElement.innerHTML += `
+
+     <div class="col center-block text-center">
+            <h6 class="time">${formatHours(forecast.dt * 1000)}</h6>
+
+              <img src="http://openweathermap.org/img/wn/${forecast.weather[0].icon}@2x.png"/> 
+             <p class="max">${Math.round(forecast.main.temp_max)}º</p>
+         <p><span class="text-capitalize">${forecast.weather[0].description}</span> </p>
+          </div>`;
+
+    }
+
 }
 function searchCity(city) {
     let apiKey = "ce35f333b488751dbaa9bd05ed8a743f";
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
     axios.get(apiUrl).then(showCurrentWeather);
-}
 
+
+    apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=metric`;
+    axios.get(apiUrl).then(displayForecast);
+
+}
 
 function handleSubmit(event) {
     event.preventDefault();
@@ -81,6 +107,9 @@ function searchLocation(position) {
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}&units=metric`;
     axios.get(apiUrl).then(showCurrentWeather);
 
+    apiUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}&units=metric`;
+    axios.get(apiUrl).then(displayForecast);
+
 }
 
 function getCurrentLocation(event) {
@@ -89,7 +118,6 @@ function getCurrentLocation(event) {
     navigator.geolocation.getCurrentPosition(searchLocation);
 
 }
-
 
 function displayFahrenheitTemperature(event) {
     event.preventDefault();
@@ -111,7 +139,6 @@ function displayCelsiusTemperature(event) {
 }
 
 let celsiusTemperature = null;
-
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
 
@@ -125,4 +152,8 @@ let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", displayCelsiusTemperature);
 
 searchCity("London");
+
+displayCurrentDate();
+
+
 
