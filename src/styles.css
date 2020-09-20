@@ -1,5 +1,6 @@
 body {
   font-family: "Montserrat", sans-serif;
+  background-color: #e3f4ff;
 }
 form {
   position: static;
@@ -7,92 +8,87 @@ form {
   padding-bottom: 10px;
 }
 h1 {
-  color: #ffffe3;
+  color: #ffffff;
   font-family: "Merriweather", serif;
 }
 
-h4 {
-  font-size: 16px;
-  color: #ffffe3;
-  font-family: "Montserrat", sans-serif;
-}
-
-h5,
 h6 {
-  color: #ffffe3;
-  font-size: 17px;
+  color: #ffffff;
   font-family: "Merriweather", serif;
-  font-weight: bolder;
+  font-weight: normal;
 }
 
 p {
-  color: #ffffe3;
-  font-size: 13px;
+  color: #ffffff;
+  font-size: 14px;
 }
 small {
   text-align: center;
+  color: #fb623d;
 }
 a {
-  color: #ffffe3;
+  color: #ffffff;
 }
 
-img{
- position:relative;
- top:-1rem;
- left:1rem;
-
- 
+#icon {
+  position: relative;
+  top: 1rem;
+  left: -0.5rem;
 }
 .units {
-  color: #ffffe3;
+  color: #ffffff;
   position: relative;
   float: right;
   top: -5rem;
- left:-2rem;
-  
+  left: -7rem;
 }
 
 .body-box {
   padding: 50px 20px;
-  max-width: 800px;
-  margin: 0 auto;
+  max-width: 700px;
 }
 .container {
-  background-image: linear-gradient(to top, #194b66 0%, #2d384e 100%);
-
-  max-width: 800px;
+  background-image: linear-gradient(to top, #647883 0%, #265e83 100%);
+  max-width: 700px;
   margin: 20px auto;
+  padding: 10px auto;
   border-radius: 20px;
 }
-.max {
-  font-weight: bold;
-}
+
 #emoji {
-  color: #f0810f;
+  color: #fb7250;
 }
 
 #description {
-  color: #ffffe3;
-  font-size: 27px;
+  color: #ffffff;
 }
-
+.max {
+  font-size: 18px;
+}
 #current-time {
-  color: #ffffe3;
+  color: #ffffff;
+  font-size: 14px;
+}
+#current-day {
+  line-height: 1;
 }
 
 #current-temperature {
-  color: #ffffe3;
-  font-size: 70px;
+  color: #ffffff;
+  font-size: 60px;
 }
 
-#fahrenheit-link.active {
-  color: #f0810f;
+#fahrenheit-link {
+  color: #ffffff;
   cursor: default;
 }
-#celsius-link.active {
-  color: #f0810f;
+#celsius-link {
+  color: #ffffff;
 }
-#celsius-link.active:hover {
+#celsius-link:hover {
+  text-decoration: none;
+}
+#fahrenheit-link {
   text-decoration: none;
 }
 a#open {
