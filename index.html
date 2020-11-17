@@ -25,14 +25,18 @@
     <div class="container">
       <div class="body-box pb-2 pt-4">
         <form id="search-form">
+          <div class="row">
+            <div class="col-md-4">
           <input
-            class="col-form-outline-primary mr-1"
+            class="col form-control-sm-outline"
             type="text"
             placeholder="Enter city"
             autocomplete="off"
             autofocus="on"
             id="search-text-input"
           />
+          </div>
+           <div class="col-md-4">
           <button
             type="submit"
             style="color: #ffffff text-dark"
@@ -41,15 +45,19 @@
           ><i class="fas fa-search" id="emoji"></i>
            Search
           </button>
+          </div>
+           <div class="col-md-4">
           <button
             type="submit"
             style="color: #ffffff text-dark"
-            class="btn btn-outline-light btn-sm ml-1"
+            class="btn btn-outline-light btn-sm"
             id="current-location-button"
           > <i class="fas fa-map-marker-alt" id="emoji"></i>
             Current location
 
           </button>
+          </div>
+          </div>
         </form>
 
         <header>
