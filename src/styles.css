@@ -94,3 +94,18 @@ a {
 a#open {
   color: black;
 }
+
+
+@media (max-width: 22.5rem) {
+  p {
+    font-size: 12px;
+  }
+
+  #current-city {
+    font-size: 1.5rem;
+  }
+
+  #current-temperature {
+    font-size: 2rem;
+  }
+}
