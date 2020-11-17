@@ -108,4 +108,19 @@ a#open {
   #current-temperature {
     font-size: 2rem;
   }
+
+   img {
+    display: none;
+  }
+  .text-capitalize {
+    display:none;
+  }
+
+  .max {
+    color: #fb7250;
+  }
+
+  .time {
+     font-size: x-large;
+  }
 }
