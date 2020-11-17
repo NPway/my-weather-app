@@ -54,15 +54,14 @@
             id="current-location-button"
           > <i class="fas fa-map-marker-alt" id="emoji"></i>
             Current location
-
-          </button>
+</button>
           </div>
           </div>
         </form>
 
-        <header>
+       
         <div class="row shadow-lg rounded">
-          <div class="col-6 col-md-4">
+          <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2">
              <h6 class="text-left mt-2 pt-2 pl-2" id="current-day"></h6> 
              <h6 class="text-left mt pl-2 pb-0" id="current-month"></h6> 
             <p class="text-left pl-2" id="current-time"></p> 
@@ -74,32 +73,36 @@
               <span id="main"></span> ºC
             </p>
           </div>
-<div class="col-md-8 pb-0 mb-0">
+<div class="col-sm-6 col-md-8 col-lg-9 col-xl-10">
 <h1 class="text-center pt-5 pb-2 pl-3" id="current-city"></h1>
  <p class="text-center" id="current-temperature"> </p>
-    <span class="units align-middle">
+    <div class="units align-middle">
       <a href=""id="celsius-link" class="">°C </a> 
      <a href="#" id="fahrenheit-link" class="">°F</a>
-         </span>
+    </div>
            </div>
+  </div>
 
-<div class="col-md-8">
-  <p class="text-right mr-5">
+<div class="row">
+  <div class="col-md-3 offset-md-3 px-0">
+  <p class="text-right">
     <i class="fas fa-tint" id="emoji"></i>
               Humidity:
               <span id="value"></span> %
             </p>
        </div>
 
-<div class="col-6 col-md-4">
- <p class="text-center">
+<div class="col-md-3 offset-md-3 px-0">
+ <p class="text-left">
 <i class="fas fa-wind" id="emoji"></i> Wind speed:
 <span id="speed"></span> m/s </p>
 </div>
-</header>
+</div>
+</div>
+
 <hr/>
 <div class="row" id="forecast">
-         <div class="col center-block text-center">
+         <div class="col-sm center-block text-center">
             <h6 class="time"></h6>
 <img src="" class="" id="forecast-icon"/>
             <p class="max">22º</p>
@@ -107,7 +110,7 @@
              </div>
     </div>
    </div>
-      </div>
+    
                  
     <small class="d-block">
         <a href="https://github.com/NPway/my-weather-app" target="_blank"id="open">Open-source code</a> , by Natalia
