@@ -10,8 +10,14 @@
       integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
       crossorigin="anonymous"
     />
-<link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap"
+      rel="stylesheet"
+    />
 
     <link rel="stylesheet" href="src/styles.css" />
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
@@ -27,96 +33,105 @@
         <form id="search-form">
           <div class="row">
             <div class="col-md-4">
-          <input
-            class="col form-control-sm-outline"
-            type="text"
-            placeholder="Enter city"
-            autocomplete="off"
-            autofocus="on"
-            id="search-text-input"
-          />
-          </div>
-           <div class="col-md-4">
-          <button
-            type="submit"
-            style="color: #ffffff text-dark"
-            class="btn btn-outline-light btn-sm"
-            id="search-button"
-          ><i class="fas fa-search" id="emoji"></i>
-           Search
-          </button>
-          </div>
-           <div class="col-md-4">
-          <button
-            type="submit"
-            style="color: #ffffff text-dark"
-            class="btn btn-outline-light btn-sm"
-            id="current-location-button"
-          > <i class="fas fa-map-marker-alt" id="emoji"></i>
-            Current location
-</button>
-          </div>
+              <input
+                class="col form-control-sm-outline"
+                type="text"
+                placeholder="Enter city"
+                autocomplete="off"
+                autofocus="on"
+                id="search-text-input"
+              />
+            </div>
+            <div class="col-md-4">
+              <button
+                type="submit"
+                style="color: #ffffff text-dark"
+                class="btn btn-outline-light btn-sm"
+                id="search-button"
+              >
+                <i class="fas fa-search" id="emoji"></i>
+                Search
+              </button>
+            </div>
+            <div class="col-md-4">
+              <button
+                type="submit"
+                style="color: #ffffff text-dark"
+                class="btn btn-outline-light btn-sm"
+                id="current-location-button"
+              >
+                <i class="fas fa-map-marker-alt" id="emoji"></i>
+                Current location
+              </button>
+            </div>
           </div>
         </form>
 
-       
         <div class="row shadow-lg rounded">
           <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2">
-             <h6 class="text-left mt-2 pt-2 pl-2" id="current-day"></h6> 
-             <h6 class="text-left mt pl-2 pb-0" id="current-month"></h6> 
-            <p class="text-left pl-2" id="current-time"></p> 
-    
-             <img src="" class="align-left " alt="" id="icon"/>
-            <p class="text-left pb-0 pl-2 mb-0 text-capitalize" id="description"></p>
-             <p class="text-left pl-2">
-              Feels like 
+            <h6 class="text-left mt-2 pt-2 pl-2" id="current-day"></h6>
+            <h6 class="text-left mt pl-2 pb-0" id="current-month"></h6>
+            <p class="text-left pl-2" id="current-time"></p>
+
+            <img src="" class="align-left" alt="" id="icon" />
+            <p
+              class="text-left pb-0 pl-2 mb-0 text-capitalize"
+              id="description"
+            ></p>
+            <p class="text-left pl-2">
+              Feels like
               <span id="main"></span> ºC
             </p>
           </div>
-<div class="col-sm-6 col-md-8 col-lg-9 col-xl-10">
-<h1 class="text-center pt-5 pb-2 pl-3" id="current-city"></h1>
- <p class="text-center" id="current-temperature"> </p>
-    <div class="units align-middle">
-      <a href=""id="celsius-link" class="">°C </a> 
-     <a href="#" id="fahrenheit-link" class="">°F</a>
-    </div>
-           </div>
-  </div>
+          <div class="col-sm-6 col-md-8 col-lg-9 col-xl-10">
+            <h1 class="text-center pt-5 pb-2 pl-3" id="current-city"></h1>
+            <p class="text-center" id="current-temperature"></p>
+            <div class="units align-middle">
+              <a href="" id="celsius-link" class="">°C </a>
+              <a href="#" id="fahrenheit-link" class="">°F</a>
+            </div>
+          </div>
+        </div>
 
-<div class="row">
-  <div class="col-md-3 offset-md-3 px-0">
-  <p class="text-right">
-    <i class="fas fa-tint" id="emoji"></i>
+        <div class="row">
+          <div class="col-md-3 offset-md-3 px-0">
+            <p class="text-right">
+              <i class="fas fa-tint" id="emoji"></i>
               Humidity:
               <span id="value"></span> %
             </p>
-       </div>
+          </div>
 
-<div class="col-md-3 offset-md-3 px-0">
- <p class="text-left">
-<i class="fas fa-wind" id="emoji"></i> Wind speed:
-<span id="speed"></span> m/s </p>
-</div>
-</div>
-</div>
+          <div class="col-md-3 offset-md-3 px-0">
+            <p class="text-left">
+              <i class="fas fa-wind" id="emoji"></i> Wind speed:
+              <span id="speed"></span> m/s
+            </p>
+          </div>
+        </div>
+      </div>
 
-<hr/>
-<div class="row" id="forecast">
-         <div class="col-sm center-block text-center">
-            <h6 class="time"></h6>
-<img src="" class="" id="forecast-icon"/>
-            <p class="max">22º</p>
-            <p><span class="text-capitalize"></span> </p>
-             </div>
+      <hr />
+      <div class="row" id="forecast">
+        <div class="col-sm center-block text-center">
+          <h6 class="time"></h6>
+          <img src="" class="" id="forecast-icon" />
+          <p class="max">22º</p>
+          <p><span class="text-capitalize"></span></p>
+        </div>
+      </div>
     </div>
-   </div>
-    
-                 
+
     <small class="d-block">
-        <a href="https://github.com/NPway/my-weather-app" target="_blank"id="open">Open-source code</a> , by Natalia
-      </small>
-      
-   <script src="src/index.js"></script>
+      <a
+        href="https://github.com/NPway/my-weather-app"
+        target="_blank"
+        id="open"
+        >Open-source code</a
+      >
+      , by Natalia
+    </small>
+
+    <script src="src/index.js"></script>
   </body>
 </html>
-
