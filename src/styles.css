@@ -96,7 +96,7 @@ a#open {
 }
 
 
-@media (max-width: 22.5rem) {
+@media (max-width: 25rem) {
   p {
     font-size: 12px;
   }
