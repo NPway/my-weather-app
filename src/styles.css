@@ -76,6 +76,7 @@ a {
 #current-temperature {
   color: #ffffff;
   font-size: 4rem;
+  padding-left: 2rem;
 }
 
 #fahrenheit-link {
