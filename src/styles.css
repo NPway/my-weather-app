@@ -107,14 +107,7 @@ a#open {
     font-size: 3rem;
   }
 
-  a #link {
-  position:relative;
-  float:right;
-  top: -3.5rem;
-  right:3.5rem;
-}
-
-  img {
+ img {
     display: none;
   }
   .text-capitalize, #state {
