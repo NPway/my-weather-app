@@ -2,11 +2,7 @@ body {
   font-family: "Montserrat", sans-serif;
   background-color: #e3f4ff;
 }
-form {
-  position: static;
-  bottom: 30px;
-  padding-bottom: 10px;
-}
+
 h1 {
   color: #ffffff;
   font-family: "Merriweather", serif;
@@ -35,24 +31,28 @@ a {
   top: 1rem;
   left: -0.5rem;
 }
+
 .units {
-  color: #ffffff;
   position: relative;
-  float: right;
-  top: -5rem;
-  left: -7rem;
+ top: -1.5rem;
+ 
 }
 
-.body-box {
-  padding: 50px 20px;
-  max-width: 700px;
+ .body-box {
+  padding: 3rem  1.25rem;
+  max-width:44rem;
 }
 .container {
   background-image: linear-gradient(to top, #647883 0%, #265e83 100%);
-  max-width: 700px;
+  max-width:44rem;
   margin: 20px auto;
   padding: 10px auto;
   border-radius: 20px;
+}
+#search-form {
+  position: static;
+  bottom:1.9rem;
+  padding-bottom:0.5rem;
 }
 
 #emoji {
@@ -63,11 +63,11 @@ a {
   color: #ffffff;
 }
 .max {
-  font-size: 18px;
+  font-size: 1.5rem;
 }
 #current-time {
   color: #ffffff;
-  font-size: 14px;
+  font-size: 1rem;
 }
 #current-day {
   line-height: 1;
@@ -75,15 +75,15 @@ a {
 
 #current-temperature {
   color: #ffffff;
-  font-size: 60px;
+  font-size: 4rem;
 }
 
 #fahrenheit-link {
-  color: #ffffff;
+  color:  #ffffff;
   cursor: default;
 }
 #celsius-link {
-  color: #ffffff;
+  color:  #ffffff;
 }
 #celsius-link:hover {
   text-decoration: none;
@@ -95,24 +95,28 @@ a#open {
   color: black;
 }
 
+@media (max-width: 25rem)  {
 
-@media (max-width: 25rem) {
-  p {
-    font-size: 12px;
-  }
 
   #current-city {
-    font-size: 1.5rem;
-  }
+    font-size: 2rem;
+   }
 
   #current-temperature {
-    font-size: 2rem;
+    font-size: 3rem;
   }
 
-   img {
+  a #link {
+  position:relative;
+  float:right;
+  top: -3.5rem;
+  right:3.5rem;
+}
+
+  img {
     display: none;
   }
-  .text-capitalize {
+  .text-capitalize, #state {
     display:none;
   }
 
@@ -123,4 +127,11 @@ a#open {
   .time {
      font-size: x-large;
   }
+
+  #humidity {
+    padding-top: 3rem;
+  }
+
 }
+
+
