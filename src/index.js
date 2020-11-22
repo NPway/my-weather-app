@@ -24,18 +24,18 @@ function displayCurrentDate() {
         "Saturday"
     ];
     let months = [
-        "January",
-        "February",
-        "March",
-        "April",
+        "Jan",
+        "Feb",
+        "Mar",
+        "Apr",
         "May",
-        "June",
-        "July",
-        "August",
-        "September",
-        "October",
-        "November",
-        "December"
+        "Jun",
+        "Jul",
+        "Aug",
+        "Sep",
+        "Oct",
+        "Nov",
+        "Dec"
     ];
     let day = days[now.getDay()];
     let month = months[now.getMonth()];
@@ -51,7 +51,7 @@ function displayCurrentDate() {
 function showCurrentWeather(response) {
 
     celsiusTemperature = response.data.main.temp;
-    let iconElement = document.querySelector("#icon");
+    let iconElement = document.querySelector("#current-icon");
     iconElement.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
 
 
@@ -74,10 +74,9 @@ function displayForecast(response) {
         forecastElement.innerHTML += `
 
      <div class="col-sm center-block text-center">
-            <h6 class="time">${formatHours(forecast.dt * 1000)}</h6>
-
-              <img src="http://openweathermap.org/img/wn/${forecast.weather[0].icon}@2x.png"/> 
-             <p class="max">${Math.round(forecast.main.temp_max)}º</p>
+            <li class="time list-unstyled">${formatHours(forecast.dt * 1000)}</li>
+<img src="http://openweathermap.org/img/wn/${forecast.weather[0].icon}@2x.png" id="forecast-icon"/> 
+             <li class="max list-unstyled">${Math.round(forecast.main.temp_max)}º</li>
          <p><span class="text-capitalize">${forecast.weather[0].description}</span> </p>
           </div>`;
 
