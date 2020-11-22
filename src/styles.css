@@ -1,6 +1,7 @@
 body {
   font-family: "Montserrat", sans-serif;
   background-color: #e3f4ff;
+  max-width: 100%;
 }
 
 h1 {
@@ -8,16 +9,13 @@ h1 {
   font-family: "Merriweather", serif;
 }
 
-h6 {
+li,
+p,
+#current-time {
   color: #ffffff;
-  font-family: "Merriweather", serif;
-  font-weight: normal;
+  font-size: 0.9rem;
 }
 
-p {
-  color: #ffffff;
-  font-size: 14px;
-}
 small {
   text-align: center;
   color: #fb623d;
@@ -26,48 +24,43 @@ a {
   color: #ffffff;
 }
 
-#icon {
-  position: relative;
-  top: 1rem;
-  left: -0.5rem;
-}
-
 .units {
   position: relative;
- top: -1.5rem;
- 
+  top: -1.5rem;
+}
+.time list-unstyled {
+  line-height: 2;
 }
 
- .body-box {
-  padding: 3rem  1.25rem;
-  max-width:44rem;
+.body-box {
+  padding: 3rem 1.25rem;
+  max-width: 44rem;
 }
 .container {
   background-image: linear-gradient(to top, #647883 0%, #265e83 100%);
-  max-width:44rem;
+  max-width: 44rem;
   margin: 20px auto;
   padding: 10px auto;
-  border-radius: 20px;
+  border-radius: 1.25rem;
 }
+
 #search-form {
   position: static;
-  bottom:1.9rem;
-  padding-bottom:0.5rem;
+  bottom: 1.9rem;
+  padding-bottom: 0.5rem;
 }
 
 #emoji {
   color: #fb7250;
 }
 
-#description {
-  color: #ffffff;
-}
 .max {
   font-size: 1.5rem;
 }
-#current-time {
-  color: #ffffff;
-  font-size: 1rem;
+
+.time {
+  font-size: 1.2rem;
+  color: #fff;
 }
 #current-day {
   line-height: 1;
@@ -79,39 +72,53 @@ a {
   padding-left: 2rem;
 }
 
-#fahrenheit-link {
-  color:  #ffffff;
-  cursor: default;
+#current-icon {
+  position: relative;
+  left: -1.25rem;
 }
-#celsius-link {
-  color:  #ffffff;
-}
-#celsius-link:hover {
+
+#celsius-link:active {
   text-decoration: none;
+  color: #fb7250;
 }
-#fahrenheit-link {
-  text-decoration: none;
+#fahrenheit-link:active {
+  text-decoration: underline;
+  color: #fb7250;
 }
 a#open {
   color: black;
 }
 
-@media (max-width: 25rem)  {
+@media (max-width: 35.9rem) {
+  #forecast-icon {
+    display: none;
+  }
 
+  .time {
+    font-size: x-large;
+  }
 
+  .max {
+    color: #fb7250;
+  }
+}
+
+@media (max-width: 25rem) {
   #current-city {
     font-size: 2rem;
-   }
+  }
 
   #current-temperature {
     font-size: 3rem;
+    padding-bottom: 9rem;
   }
 
- img {
+  img {
     display: none;
   }
-  .text-capitalize, #state {
-    display:none;
+  .text-capitalize,
+  #state {
+    display: none;
   }
 
   .max {
@@ -119,13 +126,10 @@ a#open {
   }
 
   .time {
-     font-size: x-large;
+    font-size: x-large;
   }
 
   #humidity {
     padding-top: 3rem;
   }
-
 }
-
-
